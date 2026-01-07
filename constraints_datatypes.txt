@@ -1,0 +1,56 @@
+What are Constraints? (Easy Meaning)
+    Constraints are limits given in a problem that help determine:
+    How large or small the data values can be
+    Which data type should be used
+    Which algorithm will be efficient
+    Whether overflow or runtime errors may occur
+    Reading constraints carefully is essential before designing a solution.
+
+Types of Constraints (Simple Explanation)
+1) Range Constraint
+    Specifies the minimum and maximum values a variable can take.
+    Example:
+    1 ≤ n ≤ 100000
+
+2) Size Constraint
+    Limits the size of data structures such as arrays or strings.
+    Example:
+    Array size ≤ 1000
+3) Time Constraint
+    Indicates that the program must execute within a fixed time limit, requiring an efficient algorithm.
+    Examples:
+    Small input size → O(n²) may be acceptable
+    Large input size → Prefer O(n) or O(n log n)
+
+4) Space Constraint
+    Restricts the amount of memory (RAM) the program can use.
+
+5) Input Constraint
+    Defines rules for input format, such as number of inputs, data types, and input structure.
+
+Java Primitive Data Types (Easy Table)
+Data Type	Size	Range / Information
+byte	1 byte	-128 to 127
+short	2 bytes	-32,768 to 32,767
+int	4 bytes	-2³¹ to (2³¹ − 1) ≈ ±2.1 × 10⁹
+long	8 bytes	-2⁶³ to (2⁶³ − 1)
+float	4 bytes	Precision of about 7 decimal digits
+double	8 bytes	Precision of about 15 decimal digits
+char	2 bytes	0 to 65,535 (Unicode values)
+boolean	JVM dependent	true or false
+How to Choose Data Type Using Constraints?
+
+    If value ≤ 10⁹ → use int
+    If value ≤ 10¹² → use long
+    For decimal values → use double
+    For character data → use char
+    For logical values (true/false) → use boolean
+    Using an incorrect data type may lead to overflow or incorrect results.
+Overflow Example (Very Important)
+int x = 2147483647;
+x = x + 1;
+System.out.println(x);
+Output:
+    -2147483648
+Explanation:
+    The value exceeds the maximum limit of int, causing integer overflow and wrapping around to the minimum possible value.
